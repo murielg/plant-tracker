@@ -1,5 +1,5 @@
 # plant-tracker
-Plant Tracking Android App
+A simple plant tracker Android app
 
 
 # Credit & Attributions
