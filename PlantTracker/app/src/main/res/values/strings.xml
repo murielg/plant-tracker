@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">PlantTracker</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email_placeholder">Email</string>
+    <string name="password_placeholder">Password</string>
+    <string name="login_login">Log in</string>
+    <string name="login_createaccount">Create an account</string>
+    <string name="login_questionaccount">Don\&#39;t have an account?</string>
+</resources>
