@@ -13,10 +13,7 @@ import com.gonzoapps.planttracker.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         // Hide ActionBar in LoginFragment
         (requireActivity() as AppCompatActivity).supportActionBar?.hide()

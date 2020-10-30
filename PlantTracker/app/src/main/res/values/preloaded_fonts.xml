@@ -2,6 +2,7 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/alegreya</item>
+        <item>@font/merriweather_italic</item>
         <item>@font/merriweather_light</item>
         <item>@font/nunito</item>
         <item>@font/nunito_bold</item>
