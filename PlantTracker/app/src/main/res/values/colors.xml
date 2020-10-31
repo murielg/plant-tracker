@@ -10,4 +10,13 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green_light">#74c25c</color>
     <color name="green_dark">#417c13</color>
+
+
+    <color name="polar">#E5F9F6</color>
+    <color name="aqua_haze">#EDF5F5</color>
+    <color name="mint_light">#EAFBF4</color>
+    <color name="mint_dark">#AEF2D2</color>
+    <color name="deep_sea_green">#0B565C</color>
+    <color name="timber_green">#1A2F2D</color>
+    <color name="persimmon">#FC6754</color>
 </resources>

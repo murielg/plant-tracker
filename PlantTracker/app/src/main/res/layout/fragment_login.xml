@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F2F6F5"
+        android:background="@drawable/leafy_background"
         tools:context=".screens.login.LoginFragment">
 
         <LinearLayout
@@ -18,22 +18,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:gravity="center"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/textView">
 
             <EditText
                 android:id="@+id/edittext_login_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/rounder_edittext"
                 android:drawableEnd="@drawable/ic_baseline_alternate_email_24"
                 android:fontFamily="@font/nunito"
                 android:hint="@string/email_placeholder"
                 android:inputType="none|textWebEmailAddress"
+                android:padding="8dp"
                 android:textAlignment="viewStart"
                 android:textSize="16sp" />
 
@@ -41,38 +44,39 @@
                 android:id="@+id/edittext_login_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/rounder_edittext"
                 android:drawableEnd="@drawable/ic_baseline_lock_24"
                 android:fontFamily="@font/nunito"
                 android:hint="@string/password_placeholder"
                 android:inputType="textWebPassword"
+                android:padding="8dp"
                 android:textAlignment="viewStart"
                 android:textSize="16sp" />
 
-            <Button
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_login"
+                style="@style/Widget.MaterialComponents.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#009688"
+                android:backgroundTint="@color/persimmon"
                 android:fontFamily="@font/nunito_bold"
                 android:text="@string/login_login"
+                android:textAlignment="center"
                 android:textAllCaps="true"
-                android:textColorLink="#009688"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/nunito_bold"
-                android:text="@string/login_questionaccount" />
+                app:cornerRadius="32dp" />
 
             <Button
                 android:id="@+id/button_createaccount"
+                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#AFAFAF"
                 android:fontFamily="@font/nunito_bold"
                 android:text="@string/login_createaccount"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/timber_green"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -81,9 +85,10 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:fontFamily="@font/nunito_bold"
             android:text="PlantTracker"
-            android:textColor="#128675"
+            android:textColor="@color/timber_green"
             android:textSize="36sp"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"

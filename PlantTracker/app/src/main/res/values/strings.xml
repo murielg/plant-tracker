@@ -1,10 +1,36 @@
 <resources>
     <string name="app_name">PlantTracker</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--  Login Fragment  -->
     <string name="email_placeholder">Email</string>
     <string name="password_placeholder">Password</string>
     <string name="login_login">Log in</string>
     <string name="login_createaccount">Create an account</string>
     <string name="login_questionaccount">Don\&#39;t have an account?</string>
+
+    <!--  Welcome Fragment  -->
+    <string name="pun1">I’m rooting for you!</string>
+    <string name="pun2">You\'re unbeleafable.</string>
+    <string name="pun3">Thistle be the best day ever.</string>
+    <string name="pun4">I\'m very frond of you.</string>
+    <string name="pun5">Good chives only.</string>
+    <string name="pun6">Pot it like it\'s hot.</string>
+    <string name="pun7">Let\'s take a leaf of faith.</string>
+    <string name="pun8">Plant a kiss on me.</string>
+    <string name="pun9">We\'re mint to be.</string>
+    <string name="pun10">Long thyme no see.</string>
+
+    <integer-array name="welcome_strings">
+        <item>@string/pun1</item>
+        <item>@string/pun2</item>
+        <item>@string/pun3</item>
+        <item>@string/pun4</item>
+        <item>@string/pun5</item>
+        <item>@string/pun6</item>
+        <item>@string/pun7</item>
+        <item>@string/pun8</item>
+        <item>@string/pun9</item>
+        <item>@string/pun10</item>
+    </integer-array>
 </resources>
