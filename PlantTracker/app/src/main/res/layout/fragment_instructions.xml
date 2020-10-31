@@ -1,14 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".screens.instructions.InstructionsFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".screens.instructions.InstructionsFragment"
+        android:background="@drawable/gradient_polar"
+        >
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/textview_instructions_title"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="How does PlantTracker work?"
+            android:textAlignment="center"
+            android:textColor="@color/timber_green"
+            android:textSize="32sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <TextView
+            android:id="@+id/textview_instructions_step1"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Step 1. Tap the + button to add a new plant"
+            android:textAlignment="textStart"
+            android:textColor="@color/timber_green"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_instructions_title" />
+
+        <TextView
+            android:id="@+id/textview_instructions_step2"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Step 2. Give your plant a name and fill out the form with your plant's details."
+            android:textAlignment="textStart"
+            android:textColor="@color/timber_green"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_instructions_step1" />
+
+        <TextView
+            android:id="@+id/textview_instructions_step3"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Step 3. Keep track of all your plants status' on the list screen"
+            android:textAlignment="textStart"
+            android:textColor="@color/timber_green"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_instructions_step2" />
+
+        <TextView
+            android:id="@+id/textview_instructions_step4"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="Step 4. Tap on each plant to add notes and log important events like watering, repotting, etc."
+            android:textAlignment="textStart"
+            android:textColor="@color/timber_green"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_instructions_step3" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_instructions_continue"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/persimmon"
+            android:fontFamily="@font/nunito_bold"
+            android:text="It’s party thyme!"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            app:cornerRadius="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textview_instructions_step4" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="72dp"
+            android:layout_height="73dp"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/basic_plant"
+            app:layout_constraintBottom_toTopOf="@+id/textview_instructions_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

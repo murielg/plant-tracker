@@ -74,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunito_bold"
                 android:text="@string/login_createaccount"
-                android:textAlignment="center"
+                android:textAlignment="viewStart"
                 android:textAllCaps="false"
                 android:textColor="@color/timber_green"
                 android:textStyle="bold" />
@@ -85,15 +85,15 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
             android:fontFamily="@font/nunito_bold"
             android:text="PlantTracker"
             android:textColor="@color/timber_green"
             android:textSize="36sp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.15" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

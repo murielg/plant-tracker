@@ -27,5 +27,27 @@
         android:id="@+id/instructionsFragment"
         android:name="com.gonzoapps.planttracker.screens.instructions.InstructionsFragment"
         android:label="fragment_instructions"
-        tools:layout="@layout/fragment_instructions" />
+        tools:layout="@layout/fragment_instructions" >
+        <action
+            android:id="@+id/action_instructionsFragment_to_plantListFragment"
+            app:destination="@id/plantListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/plantListFragment"
+        android:name="com.gonzoapps.planttracker.screens.list.PlantListFragment"
+        android:label="fragment_plant_list"
+        tools:layout="@layout/fragment_plant_list" >
+        <action
+            android:id="@+id/action_plantListFragment_to_plantDetailFragment"
+            app:destination="@id/plantDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/plantDetailFragment"
+        android:name="com.gonzoapps.planttracker.screens.detail.PlantDetailFragment"
+        android:label="fragment_plant_detail"
+        tools:layout="@layout/fragment_plant_detail" >
+        <action
+            android:id="@+id/action_plantDetailFragment_to_plantListFragment"
+            app:destination="@id/plantListFragment" />
+    </fragment>
 </navigation>
