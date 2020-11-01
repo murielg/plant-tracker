@@ -48,6 +48,8 @@
         tools:layout="@layout/fragment_plant_detail" >
         <action
             android:id="@+id/action_plantDetailFragment_to_plantListFragment"
-            app:destination="@id/plantListFragment" />
+            app:destination="@id/plantListFragment"
+            app:popUpTo="@id/plantListFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

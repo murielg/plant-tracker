@@ -9,28 +9,52 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/instructions_bg"
+        android:background="@drawable/leafy_bg2"
         tools:context=".screens.instructions.InstructionsFragment">
+
+        <ImageView
+            android:id="@+id/imageview_instructions"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/textview_instructions_title"
+            app:layout_constraintEnd_toEndOf="@+id/textview_instructions_title"
+            app:layout_constraintStart_toStartOf="@+id/textview_instructions_title"
+            app:srcCompat="@drawable/ic_plant2" />
+
+        <TextView
+            android:id="@+id/textview_instructions_title"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/playfair_display_bold"
+            android:text="How does PlantTracker work?"
+            android:textAlignment="center"
+            android:textColor="@color/timber_green"
+            android:textSize="32sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.19" />
 
         <TextView
             android:id="@+id/textview_instructions_step1"
-            android:layout_width="320dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:fontFamily="@font/nunito_bold"
             android:text="Tap the + button on the next screen to add a new plant"
             android:textAlignment="center"
             android:textColor="#356E65"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.2" />
+            app:layout_constraintTop_toBottomOf="@+id/textview_instructions_title" />
 
         <TextView
             android:id="@+id/textview_instructions_step2"
-            android:layout_width="320dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/nunito_bold"
@@ -45,11 +69,11 @@
 
         <TextView
             android:id="@+id/textview_instructions_step3"
-            android:layout_width="320dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/nunito_bold"
-            android:text="Keep track of all your plants in the My Plants list"
+            android:text="Keep track of all your plants in My Plants"
             android:textAlignment="center"
             android:textColor="#356E65"
             android:textSize="16sp"

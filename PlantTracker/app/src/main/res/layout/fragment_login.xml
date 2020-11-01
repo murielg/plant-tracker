@@ -97,14 +97,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageview_logo"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="@+id/textView"
             app:layout_constraintStart_toStartOf="@+id/textView"
-            app:srcCompat="@drawable/ic__22_plant_3_black" />
+            app:srcCompat="@drawable/ic_plant3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

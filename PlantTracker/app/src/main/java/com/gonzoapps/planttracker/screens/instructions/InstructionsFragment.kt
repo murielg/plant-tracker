@@ -5,16 +5,27 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.gonzoapps.planttracker.R
+import com.gonzoapps.planttracker.databinding.FragmentInstructionsBinding
 
 class InstructionsFragment : Fragment() {
+
+    private lateinit var binding : FragmentInstructionsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_instructions, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_instructions, container, false)
+
+        binding.buttonInstructionsContinue.setOnClickListener{
+            it.findNavController().navigate(R.id.action_instructionsFragment_to_plantListFragment)
+        }
+
+        return binding.root
     }
 
 }
