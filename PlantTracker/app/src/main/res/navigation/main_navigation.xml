@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/plantListFragment"
-        android:name="com.gonzoapps.planttracker.screens.list.MyPlantsFragment"
+        android:name="com.gonzoapps.planttracker.screens.myplants.MyPlantsFragment"
         android:label="fragment_plant_list"
         tools:layout="@layout/fragment_my_plants" >
         <action

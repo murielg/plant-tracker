@@ -15,11 +15,11 @@
         tools:context=".screens.welcome.WelcomeFragment">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textview_welcome_title"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:fontFamily="@font/nunito_bold"
+            android:fontFamily="@font/playfair_display_bold"
             android:text="Welcome to PlantTracker!"
             android:textAlignment="center"
             android:textColor="@color/timber_green"
@@ -32,34 +32,34 @@
             app:layout_constraintVertical_bias="0.2" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textview_welcome_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:fontFamily="@font/merriweather_italic"
+            android:fontFamily="@font/nunito_bold"
             android:textAlignment="center"
             android:textColor="#356E65"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            app:layout_constraintTop_toBottomOf="@+id/textview_welcome_title"
             tools:text="We are glad you pricked us!" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_login"
+            android:id="@+id/button_welcome"
             style="@style/Widget.MaterialComponents.Button"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:backgroundTint="@color/persimmon"
             android:fontFamily="@font/nunito_bold"
-            android:text="Let's get started"
+            android:text="Continue"
             android:textAlignment="center"
             android:textAllCaps="true"
             app:cornerRadius="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+            app:layout_constraintTop_toBottomOf="@+id/textview_welcome_message" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

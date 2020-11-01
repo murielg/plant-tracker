@@ -1,4 +1,4 @@
-package com.gonzoapps.planttracker.screens.list
+package com.gonzoapps.planttracker.screens.myplants
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

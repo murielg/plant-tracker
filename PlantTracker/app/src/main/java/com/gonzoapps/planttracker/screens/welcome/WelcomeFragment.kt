@@ -1,17 +1,14 @@
 package com.gonzoapps.planttracker.screens.welcome
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.gonzoapps.planttracker.R
 import com.gonzoapps.planttracker.databinding.FragmentWelcomeBinding
-import timber.log.Timber
-import kotlin.random.Random
-
 
 class WelcomeFragment : Fragment() {
 
@@ -30,6 +27,10 @@ class WelcomeFragment : Fragment() {
         )
 
         binding.textView4.text = getRandomPun()
+
+        binding.buttonWelcome.setOnClickListener{
+            it.findNavController().navigate(R.id.action_welcomeFragment_to_instructionsFragment)
+        }
 
 
         return binding.root

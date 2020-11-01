@@ -90,7 +90,8 @@ dependencies {
     // Logging
     implementation 'com.jakewharton.timber:timber:4.7.1'
 
-    def fragment_version = "1.2.5"
+    // RecyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
-    debugImplementation "androidx.fragment:fragment-testing:$fragment_version"
+
 }

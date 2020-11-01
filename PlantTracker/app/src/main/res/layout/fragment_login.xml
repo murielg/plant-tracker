@@ -17,12 +17,13 @@
             android:id="@+id/linearLayout"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
             android:gravity="center"
             android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.19999999">
 
             <EditText
                 android:id="@+id/edittext_login_email"
@@ -31,7 +32,7 @@
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/rounder_edittext"
                 android:drawableEnd="@drawable/ic_baseline_alternate_email_24"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/nunito"
                 android:hint="@string/email_placeholder"
                 android:inputType="none|textWebEmailAddress"
                 android:padding="8dp"
@@ -45,7 +46,7 @@
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/rounder_edittext"
                 android:drawableEnd="@drawable/ic_baseline_lock_24"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/nunito"
                 android:hint="@string/password_placeholder"
                 android:inputType="textWebPassword"
                 android:padding="8dp"
@@ -85,15 +86,25 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nunito_bold"
+            android:fontFamily="@font/playfair_display_bold"
             android:text="PlantTracker"
             android:textColor="@color/timber_green"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.41000003" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:srcCompat="@drawable/ic__22_plant_3_black" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

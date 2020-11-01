@@ -13,12 +13,14 @@ import com.gonzoapps.planttracker.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
 
+    private lateinit var binding: FragmentLoginBinding
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         // Hide ActionBar in LoginFragment
         (requireActivity() as AppCompatActivity).supportActionBar?.hide()
 
-        val binding: FragmentLoginBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
 
         binding.buttonCreateaccount.setOnClickListener {
             it.findNavController().navigate(R.id.action_login_to_welcomeFragment)
