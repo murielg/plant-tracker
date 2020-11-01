@@ -9,20 +9,18 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".screens.instructions.InstructionsFragment"
-        android:background="@drawable/gradient_polar"
-        >
+        android:background="@drawable/instructions_bg"
+        tools:context=".screens.instructions.InstructionsFragment">
 
         <TextView
-            android:id="@+id/textview_instructions_title"
+            android:id="@+id/textview_instructions_step1"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:fontFamily="@font/nunito_bold"
-            android:text="How does PlantTracker work?"
+            android:text="Tap the + button on the next screen to add a new plant"
             android:textAlignment="center"
             android:textColor="@color/timber_green"
-            android:textSize="32sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -31,28 +29,13 @@
             app:layout_constraintVertical_bias="0.2" />
 
         <TextView
-            android:id="@+id/textview_instructions_step1"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:fontFamily="@font/nunito_bold"
-            android:text="Step 1. Tap the + button on the next screen to welcome a new plant baby"
-            android:textAlignment="textStart"
-            android:textColor="@color/timber_green"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textview_instructions_title" />
-
-        <TextView
             android:id="@+id/textview_instructions_step2"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/nunito_bold"
-            android:text="Step 2. Give it a name, species, and fuill out the notes section with your plants details: water requirements, light, etc. plant a name and fill out the form with your plant's details."
-            android:textAlignment="textStart"
+            android:text="Enter your plant's name, care and watering details"
+            android:textAlignment="center"
             android:textColor="@color/timber_green"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -66,8 +49,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/nunito_bold"
-            android:text="Step 3. Keep track of all your plant babies on the list screen"
-            android:textAlignment="textStart"
+            android:text="Keep track of all your plants in the My Plants list"
+            android:textAlignment="center"
             android:textColor="@color/timber_green"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -75,37 +58,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textview_instructions_step2" />
 
-        <TextView
-            android:id="@+id/textview_instructions_step4"
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:fontFamily="@font/nunito_bold"
-            android:text="Step 4. Come back regularly to add notes and log watering events"
-            android:textAlignment="textStart"
-            android:textColor="@color/timber_green"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.505"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textview_instructions_step3" />
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_instructions_continue"
             style="@style/Widget.MaterialComponents.Button"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
             android:backgroundTint="@color/persimmon"
             android:fontFamily="@font/nunito_bold"
-            android:text="I got it!"
+            android:text="I got it"
             android:textAlignment="center"
             android:textAllCaps="true"
             app:cornerRadius="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textview_instructions_step4" />
+            app:layout_constraintTop_toBottomOf="@+id/textview_instructions_step3" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
