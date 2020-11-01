@@ -16,7 +16,7 @@ class MyPlantsFragment : Fragment() {
 
     private lateinit var binding: FragmentMyPlantsBinding
 
-    private lateinit var plants : List<String>
+    private lateinit var plants : List<Plant>
 
     private lateinit var viewManager: RecyclerView.LayoutManager
 
@@ -28,19 +28,19 @@ class MyPlantsFragment : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_my_plants, container, false)
 
-        val adapter = PlantListAdapter()
+        val adapter = MyPlantsAdapter()
 
         binding.recyclerviewPlantList.adapter = adapter
 
+        val plant1 = Plant("montsera")
+        val plant2 = Plant("baby cactus")
+        val plant3 = Plant("indoor basil")
+
         plants = listOf(
-            "Montsera",
-            "Cactus",
-            "Basil"
+            plant1, plant2, plant3,plant1, plant2, plant3
         )
 
         adapter.data = plants
-
-
 
         return binding.root
     }
