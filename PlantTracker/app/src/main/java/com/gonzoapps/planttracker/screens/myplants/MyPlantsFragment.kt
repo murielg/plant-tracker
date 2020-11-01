@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.gonzoapps.planttracker.R
 import com.gonzoapps.planttracker.databinding.FragmentMyPlantsBinding
@@ -16,9 +18,7 @@ class MyPlantsFragment : Fragment() {
 
     private lateinit var binding: FragmentMyPlantsBinding
 
-    private lateinit var plants : List<Plant>
-
-    private lateinit var viewManager: RecyclerView.LayoutManager
+    private lateinit var viewModel : MyPlantsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,19 +28,24 @@ class MyPlantsFragment : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_my_plants, container, false)
 
+        viewModel = ViewModelProvider(this).get(MyPlantsViewModel::class.java)
+
+        binding.myPlantsViewModel = viewModel
+
+        binding.lifecycleOwner = this
+
         val adapter = MyPlantsAdapter()
 
         binding.recyclerviewPlantList.adapter = adapter
 
-        val plant1 = Plant("montsera")
-        val plant2 = Plant("baby cactus")
-        val plant3 = Plant("indoor basil")
+        viewModel.plants.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                adapter.data = it
+            }
+        })
 
-        plants = listOf(
-            plant1, plant2, plant3,plant1, plant2, plant3
-        )
 
-        adapter.data = plants
+        setHasOptionsMenu(true)
 
         return binding.root
     }

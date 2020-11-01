@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/login">
+    app:startDestination="@id/loginFragment">
 
     <fragment
-        android:id="@+id/login"
+        android:id="@+id/loginFragment"
         android:name="com.gonzoapps.planttracker.screens.login.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_login_to_welcomeFragment"
             app:destination="@id/welcomeFragment" />
@@ -17,8 +17,8 @@
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.gonzoapps.planttracker.screens.welcome.WelcomeFragment"
-        android:label="fragment_welcome"
-        tools:layout="@layout/fragment_welcome" >
+        android:label="Welcome"
+        tools:layout="@layout/fragment_welcome">
         <action
             android:id="@+id/action_welcomeFragment_to_instructionsFragment"
             app:destination="@id/instructionsFragment" />
@@ -26,17 +26,19 @@
     <fragment
         android:id="@+id/instructionsFragment"
         android:name="com.gonzoapps.planttracker.screens.instructions.InstructionsFragment"
-        android:label="fragment_instructions"
-        tools:layout="@layout/fragment_instructions" >
+        android:label="Instructions"
+        tools:layout="@layout/fragment_instructions">
         <action
             android:id="@+id/action_instructionsFragment_to_plantListFragment"
-            app:destination="@id/plantListFragment" />
+            app:destination="@id/plantListFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/plantListFragment"
         android:name="com.gonzoapps.planttracker.screens.myplants.MyPlantsFragment"
-        android:label="fragment_plant_list"
-        tools:layout="@layout/fragment_my_plants" >
+        android:label="My Plants"
+        tools:layout="@layout/fragment_my_plants">
         <action
             android:id="@+id/action_plantListFragment_to_plantDetailFragment"
             app:destination="@id/plantDetailFragment" />
@@ -44,12 +46,7 @@
     <fragment
         android:id="@+id/plantDetailFragment"
         android:name="com.gonzoapps.planttracker.screens.detail.PlantDetailFragment"
-        android:label="fragment_plant_detail"
-        tools:layout="@layout/fragment_plant_detail" >
-        <action
-            android:id="@+id/action_plantDetailFragment_to_plantListFragment"
-            app:destination="@id/plantListFragment"
-            app:popUpTo="@id/plantListFragment"
-            app:popUpToInclusive="true" />
+        android:label="Plant Details"
+        tools:layout="@layout/fragment_plant_detail">
     </fragment>
 </navigation>

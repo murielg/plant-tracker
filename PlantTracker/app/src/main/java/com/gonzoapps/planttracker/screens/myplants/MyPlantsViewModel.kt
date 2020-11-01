@@ -14,14 +14,15 @@ class MyPlantsViewModel : ViewModel() {
         get() = _plants
 
 
-    val plant = Plant(
-        "Montsera",
-        1234,
-        "Living Room",
-        "Water every other day.",
-        "Empty"
-    )
+    val plant1 = Plant("montsera")
+    val plant2 = Plant("baby cactus")
+    val plant3 = Plant("indoor basil")
 
+    init {
+        _plants.value = listOf(
+            plant1, plant2, plant3,plant1, plant2, plant3
+        )
+    }
 
     override fun onCleared() {
         super.onCleared()
