@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/nunito_bold"
-            android:text="Step 1. Tap the + button to add a new plant"
+            android:text="Step 1. Tap the + button on the next screen to welcome a new plant baby"
             android:textAlignment="textStart"
             android:textColor="@color/timber_green"
             android:textSize="16sp"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/nunito_bold"
-            android:text="Step 2. Give your plant a name and fill out the form with your plant's details."
+            android:text="Step 2. Give it a name, species, and fuill out the notes section with your plants details: water requirements, light, etc. plant a name and fill out the form with your plant's details."
             android:textAlignment="textStart"
             android:textColor="@color/timber_green"
             android:textSize="16sp"
@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/nunito_bold"
-            android:text="Step 3. Keep track of all your plants status' on the list screen"
+            android:text="Step 3. Keep track of all your plant babies on the list screen"
             android:textAlignment="textStart"
             android:textColor="@color/timber_green"
             android:textSize="16sp"
@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/nunito_bold"
-            android:text="Step 4. Tap on each plant to add notes and log important events like watering, repotting, etc."
+            android:text="Step 4. Come back regularly to add notes and log watering events"
             android:textAlignment="textStart"
             android:textColor="@color/timber_green"
             android:textSize="16sp"
@@ -98,7 +98,7 @@
             android:layout_marginTop="32dp"
             android:backgroundTint="@color/persimmon"
             android:fontFamily="@font/nunito_bold"
-            android:text="It’s party thyme!"
+            android:text="I got it!"
             android:textAlignment="center"
             android:textAllCaps="true"
             app:cornerRadius="32dp"
@@ -107,16 +107,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textview_instructions_step4" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="72dp"
-            android:layout_height="73dp"
-            android:layout_marginBottom="24dp"
-            android:src="@drawable/basic_plant"
-            app:layout_constraintBottom_toTopOf="@+id/textview_instructions_title"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
