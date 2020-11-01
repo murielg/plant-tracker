@@ -26,7 +26,7 @@ class WelcomeFragment : Fragment() {
             false
         )
 
-        binding.textView4.text = getRandomPun()
+        binding.textviewWelcomeMessage.text = getRandomPun()
 
         binding.buttonWelcome.setOnClickListener{
             it.findNavController().navigate(R.id.action_welcomeFragment_to_instructionsFragment)

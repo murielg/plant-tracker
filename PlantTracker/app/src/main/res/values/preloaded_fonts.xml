@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
-        <item>@font/alegreya</item>
-        <item>@font/merriweather_italic</item>
-        <item>@font/merriweather_light</item>
-        <item>@font/merriweather_sans</item>
         <item>@font/nunito</item>
         <item>@font/nunito_bold</item>
         <item>@font/playfair_display_bold</item>
-        <item>@font/poppins</item>
-        <item>@font/poppins_bold</item>
     </array>
 </resources>
