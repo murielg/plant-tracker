@@ -13,15 +13,8 @@ class MyPlantsViewModel : ViewModel() {
     val plants : LiveData<List<Plant>>
         get() = _plants
 
-
-    val plant1 = Plant("montsera")
-    val plant2 = Plant("baby cactus")
-    val plant3 = Plant("indoor basil")
-
     init {
-        _plants.value = listOf(
-            plant1, plant2, plant3,plant1, plant2, plant3
-        )
+        _plants.value = MockPlantProvider.dataSync()
     }
 
     override fun onCleared() {
