@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/plantListFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -48,5 +48,8 @@
         android:name="com.gonzoapps.planttracker.screens.detail.PlantDetailFragment"
         android:label="Plant Details"
         tools:layout="@layout/fragment_plant_detail">
+        <action
+            android:id="@+id/action_plantDetailFragment_to_plantListFragment"
+            app:destination="@id/plantListFragment" />
     </fragment>
 </navigation>

@@ -6,12 +6,16 @@ import androidx.lifecycle.ViewModel
 import com.gonzoapps.planttracker.models.Plant
 import timber.log.Timber
 
-class MyPlantsViewModel : ViewModel() {
+class PlantsViewModel : ViewModel() {
 
-    private val _plants = MutableLiveData<List<Plant>>()
+    private val _plants = MutableLiveData<MutableList<Plant>>()
 
-    val plants : LiveData<List<Plant>>
+    val plants : LiveData<MutableList<Plant>>
         get() = _plants
+
+    fun addNewPlant(plant: Plant) {
+        _plants.value?.add(0,plant)
+    }
 
     init {
         _plants.value = MockPlantProvider.dataSync()

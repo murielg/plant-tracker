@@ -6,19 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.RecyclerView
+import androidx.navigation.findNavController
 import com.gonzoapps.planttracker.R
 import com.gonzoapps.planttracker.databinding.FragmentMyPlantsBinding
-import com.gonzoapps.planttracker.models.Plant
 
 
 class MyPlantsFragment : Fragment() {
 
     private lateinit var binding: FragmentMyPlantsBinding
 
-    private lateinit var viewModel : MyPlantsViewModel
+    private val viewModel : PlantsViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,8 +26,6 @@ class MyPlantsFragment : Fragment() {
         // Inflate the layout for this fragment
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_my_plants, container, false)
-
-        viewModel = ViewModelProvider(this).get(MyPlantsViewModel::class.java)
 
         binding.myPlantsViewModel = viewModel
 
@@ -44,6 +41,9 @@ class MyPlantsFragment : Fragment() {
             }
         })
 
+        binding.floatingActionButton.setOnClickListener {
+            it.findNavController().navigate(R.id.action_plantListFragment_to_plantDetailFragment)
+        }
 
         setHasOptionsMenu(true)
 
