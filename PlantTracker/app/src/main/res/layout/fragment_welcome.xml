@@ -22,7 +22,7 @@
             app:layout_constraintBottom_toTopOf="@+id/textview_welcome_title"
             app:layout_constraintEnd_toEndOf="@+id/textview_welcome_title"
             app:layout_constraintStart_toStartOf="@+id/textview_welcome_title"
-            app:srcCompat="@drawable/ic_plant1" />
+            app:srcCompat="@drawable/ic_plant1_color" />
 
         <TextView
             android:id="@+id/textview_welcome_title"
@@ -48,7 +48,7 @@
             android:layout_marginTop="32dp"
             android:fontFamily="@font/nunito_bold"
             android:textAlignment="center"
-            android:textColor="#356E65"
+            android:textColor="@color/teal_700"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -66,6 +66,7 @@
             android:text="Continue"
             android:textAlignment="center"
             android:textAllCaps="true"
+            android:textColor="@color/white"
             app:cornerRadius="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

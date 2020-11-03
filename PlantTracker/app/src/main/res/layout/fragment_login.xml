@@ -122,7 +122,7 @@
             app:layout_constraintEnd_toEndOf="@+id/textView"
             app:layout_constraintHorizontal_bias="0.475"
             app:layout_constraintStart_toStartOf="@+id/textView"
-            app:srcCompat="@drawable/ic_plant3_light" />
+            app:srcCompat="@drawable/ic_plant3_color" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

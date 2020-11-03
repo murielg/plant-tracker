@@ -36,7 +36,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_plant3_light" />
+        app:srcCompat="@drawable/ic_plant3_color" />
 
     <TextView
         android:id="@+id/textview_list_location"
