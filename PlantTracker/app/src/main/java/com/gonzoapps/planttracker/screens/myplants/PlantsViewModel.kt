@@ -13,8 +13,8 @@ class PlantsViewModel : ViewModel() {
     val plants : LiveData<MutableList<Plant>>
         get() = _plants
 
-    fun addNewPlant(plant: Plant) {
-        _plants.value?.add(0,plant)
+    fun addNewPlant(newPlant: Plant) {
+        _plants.value?.add(0, newPlant)
     }
 
     init {

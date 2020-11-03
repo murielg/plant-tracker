@@ -30,9 +30,11 @@ class MyPlantsAdapter : RecyclerView.Adapter<MyPlantsAdapter.ViewHolder>() {
     class ViewHolder private constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private val plantName : TextView = itemView.findViewById(R.id.textview_list_name)
+        private val plantLocation : TextView = itemView.findViewById(R.id.textview_list_location)
 
         fun bind(item: Plant) {
             plantName.text = item.name
+            plantLocation.text = item.location
         }
 
         companion object {

@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.gonzoapps.planttracker.databinding.ActivityMainBinding
 import com.gonzoapps.planttracker.screens.myplants.PlantsViewModel
@@ -15,6 +16,7 @@ import com.gonzoapps.planttracker.screens.myplants.PlantsViewModel
 class MainActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     private lateinit var sharedViewModel: PlantsViewModel
 
@@ -28,7 +30,9 @@ class MainActivity : AppCompatActivity() {
         drawerLayout = binding.drawerLayout
 
         val navController = this.findNavController(R.id.nav_host_fragment)
-        NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+
+        appBarConfiguration = AppBarConfiguration(navController.graph)
+        NavigationUI.setupActionBarWithNavController(this, navController)
 
         NavigationUI.setupWithNavController(binding.navView, navController)
 
@@ -44,6 +48,7 @@ class MainActivity : AppCompatActivity() {
     // Adding UP button to the app bar
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.nav_host_fragment)
-        return NavigationUI.navigateUp(navController, drawerLayout)
+//        return NavigationUI.navigateUp(navController, drawerLayout)
+        return NavigationUI.navigateUp(navController,appBarConfiguration)
     }
 }
