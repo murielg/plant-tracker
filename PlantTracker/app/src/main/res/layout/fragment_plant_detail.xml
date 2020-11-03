@@ -6,9 +6,6 @@
 
     <data>
         <variable
-            name="plant"
-            type="com.gonzoapps.planttracker.models.Plant" />
-        <variable
             name="viewModel"
             type="com.gonzoapps.planttracker.screens.myplants.PlantsViewModel" />
     </data>
