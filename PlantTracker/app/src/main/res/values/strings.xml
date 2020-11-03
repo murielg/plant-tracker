@@ -20,6 +20,21 @@
     <string name="pun8">Plant a kiss on me.</string>
     <string name="pun9">We\'re mint to be.</string>
     <string name="pun10">Long thyme no see.</string>
+    <string name="label_detail_plant_name">Plant Name</string>
+    <string name="label_detail_plant_location">Plant Location</string>
+    <string name="label_detail_care_instructions">Plant Care Instructions</string>
+    <string name="label_detail_event_log">Event Log</string>
+    <string name="button_save">Save Changes</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="title_new_plant">New Plant</string>
+    <string name="accessible_description_potted_plant_vector">Vector image of potted plant</string>
+    <string name="title_instructions">How does PlantTracker work?</string>
+    <string name="instructions_1">Tap the + button on the next screen to add a new plant</string>
+    <string name="instructions_2">Enter your plant\'s name, care and watering details</string>
+    <string name="instructions_3">Keep track of all your plants in My Plants</string>
+    <string name="button_got_it">Got it</string>
+    <string name="welcome_title">Welcome to PlantTracker!</string>
+    <string name="button_continue">Continue</string>
 
     <integer-array name="welcome_strings">
         <item>@string/pun1</item>

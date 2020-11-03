@@ -22,7 +22,9 @@
             app:layout_constraintBottom_toTopOf="@+id/textview_welcome_title"
             app:layout_constraintEnd_toEndOf="@+id/textview_welcome_title"
             app:layout_constraintStart_toStartOf="@+id/textview_welcome_title"
-            app:srcCompat="@drawable/ic_plant1_color" />
+            app:srcCompat="@drawable/ic_plant1_color"
+            android:contentDescription="@string/accessible_description_potted_plant_vector"
+            />
 
         <TextView
             android:id="@+id/textview_welcome_title"
@@ -32,7 +34,7 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/playfair_display_bold"
-            android:text="Welcome to PlantTracker!"
+            android:text="@string/welcome_title"
             android:textAlignment="center"
             android:textColor="@color/timber_green"
             android:textSize="32sp"
@@ -60,12 +62,12 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_welcome"
             style="@style/Widget.MaterialComponents.Button"
-            android:layout_width="250dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:backgroundTint="@color/persimmon"
             android:fontFamily="@font/nunito_bold"
-            android:text="Continue"
+            android:text="@string/button_continue"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="@color/white"

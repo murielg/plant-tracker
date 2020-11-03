@@ -28,7 +28,7 @@
 
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/imageview_detail"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/ic_plant3_white"
@@ -37,7 +37,8 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/view2"
-            app:layout_constraintVertical_bias="0.22000003" />
+            app:layout_constraintVertical_bias="0.22000003"
+            android:contentDescription="@string/accessible_description_potted_plant_vector" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -62,7 +63,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:hint="Plant Name"
+                    android:hint="@string/label_detail_plant_name"
                     app:boxBackgroundColor="@color/white">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -79,7 +80,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:hint="Plant Location"
+                    android:hint="@string/label_detail_plant_location"
                     app:boxBackgroundColor="@color/white">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -95,7 +96,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:hint="Plant Care Instructions"
+                    android:hint="@string/label_detail_care_instructions"
                     app:boxBackgroundColor="@color/white">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -111,7 +112,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:hint="Event Log"
+                    android:hint="@string/label_detail_event_log"
                     app:boxBackgroundColor="@color/white">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -124,11 +125,11 @@
                 <Button
                     android:id="@+id/button_save"
                     style="@style/Widget.MaterialComponents.Button"
-                    android:layout_width="180dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/persimmon"
                     android:fontFamily="@font/nunito_bold"
-                    android:text="Save Changes"
+                    android:text="@string/button_save"
                     android:textAlignment="center"
                     android:textAllCaps="true"
                     android:textColor="@color/white"
@@ -138,10 +139,10 @@
                 <Button
                     android:id="@+id/button_cancel"
                     style="?attr/materialButtonOutlinedStyle"
-                    android:layout_width="180dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nunito_bold"
-                    android:text="Cancel"
+                    android:text="@string/button_cancel"
                     android:textAlignment="center"
                     android:textAllCaps="true"
                     android:textColor="@color/deep_sea_green"
@@ -150,17 +151,17 @@
         </ScrollView>
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textview_title_new_plant"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/playfair_display_bold"
-            android:text="New Plant"
+            android:text="@string/title_new_plant"
             android:textColor="@color/white"
             android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4"
-            app:layout_constraintStart_toStartOf="@+id/imageView4"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+            app:layout_constraintEnd_toEndOf="@+id/imageview_detail"
+            app:layout_constraintStart_toStartOf="@+id/imageview_detail"
+            app:layout_constraintTop_toBottomOf="@+id/imageview_detail" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
