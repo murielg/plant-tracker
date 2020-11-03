@@ -42,13 +42,4 @@ class WelcomeFragment : Fragment() {
         return puns.random()
     }
 
-    override fun onStart() {
-        super.onStart()
-        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        (requireActivity() as AppCompatActivity).supportActionBar?.show()
-    }
 }

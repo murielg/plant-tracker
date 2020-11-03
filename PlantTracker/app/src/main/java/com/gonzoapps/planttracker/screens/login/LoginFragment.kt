@@ -16,7 +16,7 @@ class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        
+
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
 
         binding.buttonCreateaccount.setOnClickListener {
@@ -29,14 +29,14 @@ class LoginFragment : Fragment() {
 
         return binding.root
     }
-
-    override fun onStart() {
-        super.onStart()
-        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        (requireActivity() as AppCompatActivity).supportActionBar?.show()
-    }
+//
+//    override fun onStart() {
+//        super.onStart()
+//        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
+//    }
+//
+//    override fun onStop() {
+//        super.onStop()
+//        (requireActivity() as AppCompatActivity).supportActionBar?.show()
+//    }
 }

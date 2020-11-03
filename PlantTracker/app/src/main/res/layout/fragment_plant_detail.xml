@@ -12,110 +12,148 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/pampas"
+        android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textinputlayout_name"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <View
+            android:id="@+id/view2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Plant Name"
+            android:layout_height="150dp"
+            android:background="@color/teal_700"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edittext_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textinputlayout_location"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Plant Location"
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_plant3_white"
+            app:layout_constraintBottom_toBottomOf="@+id/view2"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textinputlayout_name">
+            app:layout_constraintTop_toTopOf="@id/view2"
+            app:layout_constraintVertical_bias="0.22000003" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edittext_location"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textinputlayout_instructions"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Plant Care Instructions"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textinputlayout_location">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edittext_instructions"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:height="100dp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textinputlayout_log"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Event Log"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textinputlayout_instructions">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edittext_log"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:height="100dp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_save"
-            style="@style/Widget.MaterialComponents.Button"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/persimmon"
-            android:fontFamily="@font/nunito_bold"
-            android:text="Save Changes"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            app:cornerRadius="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/button_cancel"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_cancel"
-            style="@style/Widget.MaterialComponents.Button"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/pampas"
-            android:fontFamily="@font/nunito_bold"
-            android:text="Cancel"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            app:cornerRadius="32dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinputlayout_name"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Plant Name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edittext_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinputlayout_location"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Plant Location">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edittext_location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinputlayout_instructions"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:hint="Plant Care Instructions">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edittext_instructions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:height="100dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinputlayout_log"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Event Log">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edittext_log"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:height="100dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_save"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/persimmon"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="Save Changes"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    app:cornerRadius="32dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button_cancel"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#DADADA"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="Cancel"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    app:cornerRadius="32dp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/playfair_display_bold"
+            android:text="New Plant"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView4"
+            app:layout_constraintStart_toStartOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
