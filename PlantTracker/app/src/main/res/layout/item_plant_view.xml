@@ -13,7 +13,8 @@
     android:orientation="vertical"
     android:paddingStart="16dp"
     android:paddingEnd="16dp"
-    android:textSize="24sp">
+    android:textSize="24sp"
+    >
 
     <TextView
         android:id="@+id/textview_list_name"

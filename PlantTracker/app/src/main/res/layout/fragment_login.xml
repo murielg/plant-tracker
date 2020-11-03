@@ -43,7 +43,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:hint="Email">
+                android:hint="Email"
+                app:boxBackgroundColor="@color/white"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edittext_login_email"
@@ -60,7 +62,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:hint="Password">
+                android:hint="Password"
+                app:boxBackgroundColor="@color/white"
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edittext_login_password"
@@ -84,18 +88,18 @@
                 android:textColor="@color/white"
                 app:cornerRadius="32dp" />
 
+
             <Button
                 android:id="@+id/button_createaccount"
-                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-                android:layout_width="match_parent"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:fontFamily="@font/nunito_bold"
                 android:text="@string/login_createaccount"
                 android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="@color/timber_green"
-                android:textStyle="bold" />
+                android:textAllCaps="true"
+                android:textColor="@color/deep_sea_green"
+                app:cornerRadius="32dp" />
 
         </LinearLayout>
 
