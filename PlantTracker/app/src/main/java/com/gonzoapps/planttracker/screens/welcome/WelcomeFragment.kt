@@ -15,24 +15,15 @@ class WelcomeFragment : Fragment() {
 
     private lateinit var binding: FragmentWelcomeBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        binding = DataBindingUtil.inflate(
-            inflater,
-            R.layout.fragment_welcome,
-            container,
-            false
-        )
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
 
         binding.textviewWelcomeMessage.text = getRandomPun()
 
         binding.buttonWelcome.setOnClickListener{
             it.findNavController().navigate(R.id.action_welcomeFragment_to_instructionsFragment)
         }
-
 
         return binding.root
     }

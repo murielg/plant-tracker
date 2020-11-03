@@ -41,6 +41,7 @@ class MyPlantsFragment : Fragment() {
         })
 
         binding.floatingActionButton.setOnClickListener {
+            viewModel.onAddNewPlantButtonClicked()
             it.findNavController().navigate(R.id.action_plantListFragment_to_plantDetailFragment)
         }
 

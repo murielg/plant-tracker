@@ -5,9 +5,11 @@
     tools:context=".screens.detail.PlantDetailFragment">
 
     <data>
-
         <variable
-            name="myPlantsViewModel"
+            name="plant"
+            type="com.gonzoapps.planttracker.models.Plant" />
+        <variable
+            name="viewModel"
             type="com.gonzoapps.planttracker.screens.myplants.PlantsViewModel" />
     </data>
 
@@ -18,7 +20,7 @@
         android:orientation="vertical">
 
         <View
-            android:id="@+id/view2"
+            android:id="@+id/backgroundColorView"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:background="@color/teal_700"
@@ -32,11 +34,11 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/ic_plant3_white"
-            app:layout_constraintBottom_toBottomOf="@+id/view2"
+            app:layout_constraintBottom_toBottomOf="@+id/backgroundColorView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/view2"
+            app:layout_constraintTop_toTopOf="@id/backgroundColorView"
             app:layout_constraintVertical_bias="0.22000003"
             android:contentDescription="@string/accessible_description_potted_plant_vector" />
 
@@ -47,7 +49,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view2">
+            app:layout_constraintTop_toBottomOf="@+id/backgroundColorView">
 
 
             <LinearLayout
@@ -68,6 +70,7 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edittext_name"
+                        android:text="@={viewModel.plantName}"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
@@ -85,6 +88,7 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edittext_location"
+                        android:text="@={viewModel.plantLocation}"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
@@ -102,7 +106,9 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edittext_instructions"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:text="@={viewModel.plantCare}"
+                        />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -118,7 +124,9 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edittext_log"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:text="@={viewModel.plantLog}"
+                        />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -133,8 +141,9 @@
                     android:textAlignment="center"
                     android:textAllCaps="true"
                     android:textColor="@color/white"
-                    app:cornerRadius="32dp" />
-
+                    app:cornerRadius="32dp"
+                    android:onClick="@{() -> viewModel.addNewPlant()}"
+                    />
 
                 <Button
                     android:id="@+id/button_cancel"

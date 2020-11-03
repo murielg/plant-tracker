@@ -15,10 +15,7 @@ class InstructionsFragment : Fragment() {
 
     private lateinit var binding : FragmentInstructionsBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_instructions, container, false)
 
@@ -28,6 +25,5 @@ class InstructionsFragment : Fragment() {
 
         return binding.root
     }
-
 
 }
