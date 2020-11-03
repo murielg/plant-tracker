@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:hint="Email"
+                android:hint="@string/hint_email"
                 app:boxBackgroundColor="@color/white"
                 app:endIconMode="custom"
                 app:endIconDrawable="@drawable/ic_baseline_alternate_email_24"
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
 
-                android:hint="Password"
+                android:hint="@string/hint_password"
                 app:boxBackgroundColor="@color/white"
                 app:endIconMode="password_toggle"
                 >
@@ -104,7 +104,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/playfair_display_bold"
-            android:text="PlantTracker"
+            android:text="@string/app_title"
             android:textColor="@color/timber_green"
             android:textSize="36sp"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
@@ -121,7 +121,8 @@
             app:layout_constraintEnd_toEndOf="@+id/textView"
             app:layout_constraintHorizontal_bias="0.475"
             app:layout_constraintStart_toStartOf="@+id/textView"
-            app:srcCompat="@drawable/ic_plant3_color" />
+            app:srcCompat="@drawable/ic_plant3_color"
+            android:contentDescription="@string/accessible_description_potted_plant_vector" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
