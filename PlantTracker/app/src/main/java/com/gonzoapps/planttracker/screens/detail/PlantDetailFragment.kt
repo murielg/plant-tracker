@@ -56,6 +56,7 @@ class PlantDetailFragment : Fragment() {
 
     private fun navigateToList(view: View?) {
         view?.findNavController()?.navigate(R.id.action_plantDetailFragment_to_plantListFragment)
+        hideKeyboard()
     }
 
     // TODO: Implement Hide Keyboard Function
