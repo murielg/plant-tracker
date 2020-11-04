@@ -26,7 +26,7 @@ The main goal of this project was to build an app that implements custom layouts
 
 [<img src="/screenshots/list.png" width="250"/>](/screenshots/list.png)
 
-5. Plant Details screen
+5. Add new plant detail screen
 
 [<img src="/screenshots/detail.png" width="250"/>](/screenshots/detail.png)
 
