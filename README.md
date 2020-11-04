@@ -4,6 +4,11 @@ A simple plant tracker Android app
 ## Project Description 
 The main goal of this project was to build an app that implements custom layouts, as well as the navigation features. 
 
+## Features 
+- Single-activity architecture with Navigation component to manage fragment transitions and operations
+- Presentation layer made of a a fragment per screen, with a shared ViewModel
+- Reactive UIs with encapsulated LiveData and Data Binding.
+
 ### Screens
 1. Login screen
 
