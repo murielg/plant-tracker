@@ -20,21 +20,26 @@ class MyPlantsAdapter : RecyclerView.Adapter<MyPlantsAdapter.ViewHolder>() {
     override fun getItemCount() = data.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = ItemPlantViewBinding.inflate(layoutInflater, parent, false)
-        return ViewHolder(binding)
+        return ViewHolder.from(parent)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(data[position])
 
-    inner class ViewHolder(val binding: ItemPlantViewBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder(val binding: ItemPlantViewBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Plant) {
             with(binding) {
                 binding.plant = item
                 binding.executePendingBindings()
             }
+        }
 
+        companion object {
+            fun from(parent: ViewGroup): ViewHolder {
+                val layoutInflater = LayoutInflater.from(parent.context)
+                val binding = ItemPlantViewBinding.inflate(layoutInflater, parent, false)
+                return ViewHolder(binding)
+            }
         }
 
     }
