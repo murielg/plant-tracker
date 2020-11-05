@@ -1,23 +1,25 @@
 package com.gonzoapps.planttracker.screens.myplants
 
+import android.app.Application
 import android.view.View
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import com.gonzoapps.planttracker.db.PlantDatabaseDao
 import com.gonzoapps.planttracker.models.Plant
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import timber.log.Timber
 
-class PlantsViewModel : ViewModel() {
+class PlantsViewModel(private val dataSource: PlantDatabaseDao, application: Application) : AndroidViewModel(application) {
 
     val plantName = MutableLiveData<String>()
     val plantLocation = MutableLiveData<String>()
     val plantCare = MutableLiveData<String>()
     val plantLog = MutableLiveData<String>()
 
-    private val _plants = MutableLiveData<MutableList<Plant>>()
+    val allPlants = dataSource.getAllPlants()
 
-    val plants : LiveData<MutableList<Plant>>
-        get() = _plants
+    private val _plants = MutableLiveData<MutableList<Plant>>()
 
     private val _newPlantAdded = MutableLiveData<Boolean>()
     val newPlantAdded: LiveData<Boolean>
@@ -37,15 +39,18 @@ class PlantsViewModel : ViewModel() {
     }
 
     fun addNewPlant() {
-        val plant = Plant(
-            plantName.value.toString(),
-            plantLocation.value.toString(),
-            plantCare.value.toString(),
-            plantLog.value.toString(),
-        )
-        _plants.value?.add(0, plant)
-        resetFields()
-        _newPlantAdded.value = true
+        viewModelScope.launch {
+            val plant = Plant(
+                plantName.value.toString(),
+                plantLocation.value.toString(),
+                plantCare.value.toString(),
+                plantLog.value.toString(),
+            )
+            insertPlant(plant)
+
+            resetFields()
+            _newPlantAdded.value = true
+        }
     }
 
     private fun resetFields() {
@@ -58,5 +63,11 @@ class PlantsViewModel : ViewModel() {
     override fun onCleared() {
         super.onCleared()
         Timber.i("onCleared called")
+    }
+
+    private suspend fun insertPlant(plant: Plant) {
+        withContext(Dispatchers.IO) {
+            dataSource.insert(plant)
+        }
     }
 }

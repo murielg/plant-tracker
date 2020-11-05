@@ -11,7 +11,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.gonzoapps.planttracker.databinding.ActivityMainBinding
+import com.gonzoapps.planttracker.db.PlantDatabase
 import com.gonzoapps.planttracker.screens.myplants.PlantsViewModel
+import com.gonzoapps.planttracker.screens.myplants.PlantsViewModelFactory
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,7 +27,13 @@ class MainActivity : AppCompatActivity() {
 
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
 
-        sharedViewModel = ViewModelProvider(this).get(PlantsViewModel::class.java)
+        val application = requireNotNull(this).application
+
+        val dataSource = PlantDatabase.getInstance(application).plantDatabaseDao
+
+        val viewModelFactory = PlantsViewModelFactory(dataSource,application)
+
+        sharedViewModel = ViewModelProvider(this,viewModelFactory).get(PlantsViewModel::class.java)
 
         drawerLayout = binding.drawerLayout
 

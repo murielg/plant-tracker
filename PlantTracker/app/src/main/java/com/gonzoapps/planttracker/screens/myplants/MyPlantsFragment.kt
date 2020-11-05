@@ -34,7 +34,7 @@ class MyPlantsFragment : Fragment() {
 
         binding.recyclerviewPlantList.adapter = adapter
 
-        viewModel.plants.observe(viewLifecycleOwner, Observer {
+        viewModel.allPlants.observe(viewLifecycleOwner, Observer {
             it?.let {
                 adapter.data = it
             }
