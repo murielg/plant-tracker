@@ -19,14 +19,11 @@ class PlantsViewModel(private val dataSource: PlantDatabaseDao, application: App
 
     val allPlants = dataSource.getAllPlants()
 
-    private val _plants = MutableLiveData<MutableList<Plant>>()
-
     private val _newPlantAdded = MutableLiveData<Boolean>()
     val newPlantAdded: LiveData<Boolean>
         get() = _newPlantAdded
 
     init {
-        _plants.value = MockPlantProvider.dataSync()
         _newPlantAdded.value = false
     }
 
@@ -53,6 +50,12 @@ class PlantsViewModel(private val dataSource: PlantDatabaseDao, application: App
         }
     }
 
+    private suspend fun insertPlant(plant: Plant) {
+        withContext(Dispatchers.IO) {
+            dataSource.insert(plant)
+        }
+    }
+
     private fun resetFields() {
         plantName.value = ""
         plantLocation.value = ""
@@ -65,9 +68,5 @@ class PlantsViewModel(private val dataSource: PlantDatabaseDao, application: App
         Timber.i("onCleared called")
     }
 
-    private suspend fun insertPlant(plant: Plant) {
-        withContext(Dispatchers.IO) {
-            dataSource.insert(plant)
-        }
-    }
+
 }
