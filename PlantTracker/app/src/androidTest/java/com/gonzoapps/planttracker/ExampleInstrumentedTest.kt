@@ -50,4 +50,12 @@ class ExampleInstrumentedTest {
         plantDao.clearTable()
         assertEquals(plantDao.getAllPlants().value?.size,null)
     }
+
+    @Test
+    @Throws(Exception::class)
+    fun insertAndGet() = runBlocking {
+        val plantId = plantDao.insert(Plant("Maggie the Montsera🌱", "Living Room", "", ""))
+        val plant = plantDao.get(plantId)
+        assertEquals(plant?.plantId,plantId)
+    }
 }
