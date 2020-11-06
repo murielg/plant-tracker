@@ -70,7 +70,7 @@ class PlantDatabaseTest {
     @Throws(Exception::class)
     fun bulkInsert(){
         val plants = MockPlantProvider.dataSync()
-        val plantsSize = MockPlantProvider.dataSync().size
+        val plantsSize = plants.size
 
         runBlocking {
             plantDao.bulkInsert(plants)
