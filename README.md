@@ -11,25 +11,12 @@ It also includes Room support with basic testing.
 - Reactive UIs with encapsulated LiveData and Data Binding.
 - Room Database and Coroutines.
 
-### Screens
-1. Login screen
+### Screenshots
 
 [<img src="/screenshots/login.png" width="250"/>](/screenshots/login.png)
-  
-2. Welcome screeen
-
 [<img src="/screenshots/welcome.png" width="250"/>](/screenshots/welcome.png)
-
-3. Instructions screen
-
 [<img src="/screenshots/instructions.png" width="250"/>](/screenshots/instructions.png)
-
-4. My Plants list screen
-
 [<img src="/screenshots/list.png" width="250"/>](/screenshots/list.png)
-
-5. Add new plant detail screen
-
 [<img src="/screenshots/detail.png" width="250"/>](/screenshots/detail.png)
 
 
