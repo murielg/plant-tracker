@@ -2,7 +2,8 @@
 A simple plant tracker Android app
 
 ## Project Description 
-The main goal of this project was to build an app that implements custom layouts, as well as the navigation features. 
+The main goal of this project was to build an app that implements custom layouts, as well as navigation features. 
+It also includes Room support with basic testing. 
 
 ## Features 
 - Single-activity architecture with Navigation component to manage fragment transitions and operations.
