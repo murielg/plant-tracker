@@ -17,16 +17,13 @@
 package com.gonzoapps.planttracker.db
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import com.gonzoapps.planttracker.models.Plant
 
 @Dao
 interface PlantDatabaseDao {
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(plant: Plant) : Long
 
     @Update
@@ -40,4 +37,13 @@ interface PlantDatabaseDao {
 
     @Query("SELECT * FROM plants_table ORDER BY plantId DESC")
     fun getAllPlants(): LiveData<List<Plant>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun bulkInsert(plants: List<Plant>) : Array<Long>
+
+    @Transaction
+    open suspend fun updateData(users: List<Plant>) {
+        clearTable()
+        bulkInsert(users)
+    }
 }

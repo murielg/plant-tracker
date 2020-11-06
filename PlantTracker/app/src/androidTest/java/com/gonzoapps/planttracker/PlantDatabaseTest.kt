@@ -1,22 +1,28 @@
 package com.gonzoapps.planttracker
 
 import android.content.Context
+import androidx.lifecycle.*
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
-import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.gonzoapps.planttracker.db.PlantDatabase
 import com.gonzoapps.planttracker.db.PlantDatabaseDao
 import com.gonzoapps.planttracker.models.Plant
+import com.gonzoapps.planttracker.screens.myplants.MockPlantProvider
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import org.junit.After
-
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
+import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-
-import org.junit.Assert.*
-import org.junit.Before
+import org.mockito.Mockito.`when`
+import org.mockito.Mockito.mock
 import java.io.IOException
+
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -48,7 +54,7 @@ class PlantDatabaseTest {
         val plant = Plant("Maggie the Montsera🌱", "Living Room", "", "")
         plantDao.insert(plant)
         plantDao.clearTable()
-        assertEquals(plantDao.getAllPlants().value?.size,null)
+        assertEquals(plantDao.getAllPlants().value?.size, null)
     }
 
     @Test
@@ -56,6 +62,34 @@ class PlantDatabaseTest {
     fun insertAndGet() = runBlocking {
         val plantId = plantDao.insert(Plant("Maggie the Montsera🌱", "Living Room", "", ""))
         val plant = plantDao.get(plantId)
-        assertEquals(plant?.plantId,plantId)
+        assertNotNull(plant)
+        assertEquals(plant?.plantId, plantId)
+    }
+
+    @Test
+    @Throws(Exception::class)
+    fun bulkInsert(){
+        val plants = MockPlantProvider.dataSync()
+        val plantsSize = MockPlantProvider.dataSync().size
+
+        runBlocking {
+            plantDao.bulkInsert(plants)
+        }
+
+        GlobalScope.launch(Dispatchers.Main) {
+            val dbPlants = plantDao.getAllPlants()
+            dbPlants.observe(mockLifecycleOwner()!!, Observer {
+                assertNotNull(it)
+                assertEquals(it.size,plantsSize)
+            })
+        }
+    }
+
+    private fun mockLifecycleOwner(): LifecycleOwner? {
+        val owner: LifecycleOwner = mock(LifecycleOwner::class.java)
+        val lifecycle = LifecycleRegistry(owner)
+        lifecycle.handleLifecycleEvent(Lifecycle.Event.ON_RESUME)
+        `when`(owner.lifecycle).thenReturn(lifecycle)
+        return owner
     }
 }

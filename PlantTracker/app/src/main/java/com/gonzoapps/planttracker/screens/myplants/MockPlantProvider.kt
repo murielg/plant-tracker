@@ -6,7 +6,7 @@ object MockPlantProvider {
 
     private var data = emptyList<Plant>()
 
-    fun dataSync() : MutableList<Plant> {
+    fun dataSync() : List<Plant> {
         val plant1 = Plant("Maggie the Montsera🌱", "Living Room")
         val plant2 = Plant("Huckleberry Fern 🌿", "Living Room")
         val plant3 = Plant("Indoor Basil III 🍃", "Kitchen")
@@ -20,7 +20,7 @@ object MockPlantProvider {
         val plant11 = Plant("Fig-alicious 🌾", "Living Room")
         val plant12 = Plant("Palmela Anderson 🌴", "Balcony")
 
-        return mutableListOf(
+        return listOf(
             plant1,
             plant2,
             plant3,
