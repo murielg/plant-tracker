@@ -38,6 +38,7 @@
     <string name="app_title">PlantTracker</string>
     <string name="hint_password">Password</string>
     <string name="hint_email">Email</string>
+    <string name="button_delete">Delete</string>
 
     <integer-array name="welcome_strings">
         <item>@string/pun1</item>

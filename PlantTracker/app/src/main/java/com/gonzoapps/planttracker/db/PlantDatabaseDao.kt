@@ -46,4 +46,7 @@ interface PlantDatabaseDao {
         clearTable()
         bulkInsert(users)
     }
+
+    @Query("DELETE FROM plants_table WHERE plantId = :plantId")
+    suspend fun deletePlantById(plantId: String): Int
 }

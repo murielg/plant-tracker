@@ -38,10 +38,6 @@ class PlantDetailFragment : Fragment() {
 
         binding.lifecycleOwner = this
 
-        binding.buttonCancel.setOnClickListener {
-            viewModel.onCancelClicked()
-        }
-
         viewModel.navigateToPlantList.observe(viewLifecycleOwner, Observer {
             it?.let {
                 if (it) {

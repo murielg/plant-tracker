@@ -113,6 +113,24 @@ class PlantDetailViewModel(private val dataSource: PlantDatabaseDao) : ViewModel
         _navigateToPlantList.value = true
     }
 
+    fun onDeleteClicked() {
+        viewModelScope.launch {
+            if (plantId!= null){
+                deletePlant(plantId!!)
+                resetFields()
+                _navigateToPlantList.value = true
+            }
+        }
+    }
+
+    private suspend fun deletePlant(id: String) {
+        withContext(Dispatchers.IO) {
+            dataSource.deletePlantById(id)
+        }
+    }
+
+
+
     private fun resetFields() {
         name.value = ""
         location.value = ""
