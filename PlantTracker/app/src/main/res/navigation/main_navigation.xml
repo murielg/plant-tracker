@@ -75,5 +75,9 @@
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left"
             />
+        <argument
+            android:name="plantId"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
 </navigation>

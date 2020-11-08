@@ -8,6 +8,12 @@
         <variable
             name="plant"
             type="com.gonzoapps.planttracker.models.Plant" />
+
+        <variable
+            name="clickListener"
+            type="com.gonzoapps.planttracker.screens.myplants.PlantClickListener" />
+
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,6 +29,7 @@
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:textSize="24sp"
+        android:onClick="@{() -> clickListener.onClick(plant)}"
         >
 
         <TextView

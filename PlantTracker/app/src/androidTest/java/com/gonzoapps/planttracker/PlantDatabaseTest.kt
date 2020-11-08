@@ -57,14 +57,14 @@ class PlantDatabaseTest {
         assertEquals(plantDao.getAllPlants().value?.size, null)
     }
 
-    @Test
-    @Throws(Exception::class)
-    fun insertAndGet() = runBlocking {
-        val plantId = plantDao.insert(Plant("Maggie the Montsera🌱", "Living Room", "", ""))
-        val plant = plantDao.get(plantId)
-        assertNotNull(plant)
-        assertEquals(plant?.plantId, plantId)
-    }
+//    @Test
+//    @Throws(Exception::class)
+//    fun insertAndGet() = runBlocking {
+//        val plantId = plantDao.insert(Plant("Maggie the Montsera🌱", "Living Room", "", ""))
+//        val plant = plantDao.get(plantId)
+//        assertNotNull(plant)
+//        assertEquals(plant?.plantId, plantId)
+//    }
 
     @Test
     @Throws(Exception::class)

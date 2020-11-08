@@ -8,26 +8,24 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.gonzoapps.planttracker.R
 import com.gonzoapps.planttracker.databinding.FragmentPlantDetailBinding
-import com.gonzoapps.planttracker.models.Plant
-import com.gonzoapps.planttracker.screens.myplants.PlantsViewModel
+import com.gonzoapps.planttracker.util.getViewModelFactory
+import com.google.android.material.snackbar.Snackbar
 
 class PlantDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentPlantDetailBinding
 
-    private val viewModel: PlantsViewModel by activityViewModels()
+    private val args: PlantDetailFragmentArgs by navArgs()
 
-    private lateinit var newPlant : Plant
+    private val viewModel by viewModels<PlantDetailViewModel> {getViewModelFactory()  }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         binding = DataBindingUtil.inflate(
             inflater,
@@ -40,26 +38,40 @@ class PlantDetailFragment : Fragment() {
 
         binding.lifecycleOwner = this
 
-        viewModel.newPlantAdded.observe(viewLifecycleOwner, Observer { newPlantAdded ->
-            if (newPlantAdded) {
-                navigateToList(view)
+        binding.buttonCancel.setOnClickListener {
+            viewModel.onCancelClicked()
+        }
+
+        viewModel.navigateToPlantList.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                if (it) {
+                    this.findNavController().navigate(PlantDetailFragmentDirections.actionPlantDetailFragmentToPlantListFragment())
+                    hideKeyboard()
+                }
             }
         })
 
-        binding.buttonCancel.setOnClickListener {
-            viewModel.onCancelClicked()
-            navigateToList(it)
-        }
+
+        viewModel.snackbarText.observe(viewLifecycleOwner, Observer {
+            showSnackbar(it)
+        })
 
         return binding.root
     }
 
-    private fun navigateToList(view: View?) {
-        view?.findNavController()?.navigate(R.id.action_plantDetailFragment_to_plantListFragment)
-        hideKeyboard()
+    private fun showSnackbar(snackbarText: String) {
+        Snackbar.make(
+                requireActivity().findViewById(android.R.id.content),
+                snackbarText,
+                Snackbar.LENGTH_SHORT
+        ).show()
     }
 
-    // TODO: Implement Hide Keyboard Function
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel.start(args.plantId)
+    }
+
     private fun hideKeyboard() {
         val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(view?.windowToken, 0)

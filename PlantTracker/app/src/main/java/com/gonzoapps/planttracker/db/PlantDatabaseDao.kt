@@ -24,13 +24,13 @@ import com.gonzoapps.planttracker.models.Plant
 interface PlantDatabaseDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(plant: Plant) : Long
+    suspend fun insert(plant: Plant)
 
-    @Update
+    @Update(onConflict = OnConflictStrategy.REPLACE)
     suspend fun update(plant: Plant)
 
     @Query("SELECT * FROM plants_table WHERE plantId = :id")
-    suspend fun get(id: Long) : Plant?
+    suspend fun get(id: String) : Plant?
 
     @Query("DELETE FROM plants_table")
     suspend fun clearTable()
@@ -39,7 +39,7 @@ interface PlantDatabaseDao {
     fun getAllPlants(): LiveData<List<Plant>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun bulkInsert(plants: List<Plant>) : Array<Long>
+    suspend fun bulkInsert(plants: List<Plant>)
 
     @Transaction
     open suspend fun updateData(users: List<Plant>) {

@@ -7,7 +7,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.gonzoapps.planttracker.screens.myplants.PlantsViewModel" />
+            type="com.gonzoapps.planttracker.screens.detail.PlantDetailViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -67,7 +67,7 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edittext_name"
-                        android:text="@={viewModel.plantName}"
+                        android:text="@={viewModel.name}"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
@@ -85,11 +85,12 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edittext_location"
-                        android:text="@={viewModel.plantLocation}"
+                        android:text="@={viewModel.location}"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                 </com.google.android.material.textfield.TextInputLayout>
+
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textinputlayout_instructions"
@@ -104,7 +105,7 @@
                         android:id="@+id/edittext_instructions"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@={viewModel.plantCare}"
+                        android:text="@={viewModel.care}"
                         />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -122,7 +123,7 @@
                         android:id="@+id/edittext_log"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@={viewModel.plantLog}"
+                        android:text="@={viewModel.log}"
                         />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -135,7 +136,7 @@
                     android:layout_marginTop="32dp"
                     android:backgroundTint="@color/persimmon"
                     android:fontFamily="@font/nunito_bold"
-                    android:onClick="@{() -> viewModel.addNewPlant()}"
+                    android:onClick="@{() -> viewModel.savePlant()}"
                     android:text="@string/button_save"
                     android:textAlignment="center"
                     android:textAllCaps="true"

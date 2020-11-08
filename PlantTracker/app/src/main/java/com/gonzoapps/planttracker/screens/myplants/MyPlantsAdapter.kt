@@ -1,30 +1,28 @@
 package com.gonzoapps.planttracker.screens.myplants
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.gonzoapps.planttracker.R
 import com.gonzoapps.planttracker.databinding.ItemPlantViewBinding
 import com.gonzoapps.planttracker.models.Plant
 
-class MyPlantsAdapter : ListAdapter<Plant, MyPlantsAdapter.ViewHolder>(PlantDiffCallback()) {
+class MyPlantsAdapter(val clickListener: PlantClickListener) : ListAdapter<Plant, MyPlantsAdapter.ViewHolder>(PlantDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder.from(parent)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(getItem(position))
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(getItem(position), clickListener)
 
     class ViewHolder(val binding: ItemPlantViewBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Plant) {
+        fun bind(item: Plant, clickListener: PlantClickListener) {
             with(binding) {
                 plant = item
-                executePendingBindings()
+                binding.executePendingBindings()
+                binding.clickListener = clickListener
             }
         }
 
@@ -46,4 +44,8 @@ class PlantDiffCallback : DiffUtil.ItemCallback<Plant>() {
     override fun areContentsTheSame(oldItem: Plant, newItem: Plant): Boolean {
         return oldItem == newItem
     }
+}
+
+class PlantClickListener(val clickListener: (plantId: String)-> Unit) {
+    fun onClick(plant: Plant) = clickListener(plant.plantId)
 }

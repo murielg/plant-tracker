@@ -4,25 +4,26 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.gonzoapps.planttracker.R
 import com.gonzoapps.planttracker.databinding.FragmentMyPlantsBinding
+import com.gonzoapps.planttracker.util.getViewModelFactory
 
 
 class MyPlantsFragment : Fragment() {
 
     private lateinit var binding: FragmentMyPlantsBinding
 
-    private val viewModel : PlantsViewModel by activityViewModels()
+    private val viewModel by viewModels<PlantsViewModel> {getViewModelFactory()  }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_my_plants, container, false)
 
@@ -30,9 +31,16 @@ class MyPlantsFragment : Fragment() {
 
         binding.lifecycleOwner = this
 
-        val adapter = MyPlantsAdapter()
+        val adapter = MyPlantsAdapter(PlantClickListener{
+            plantId -> viewModel.onPlantClicked(plantId)
+        })
 
         binding.recyclerviewPlantList.adapter = adapter
+
+        binding.buttonPlantsNew.setOnClickListener {
+            this.findNavController().navigate(MyPlantsFragmentDirections.actionPlantListFragmentToPlantDetailFragment(null))
+            viewModel.onPlantDetailNavigated()
+        }
 
         viewModel.allPlants.observe(viewLifecycleOwner, Observer {
             it?.let {
@@ -40,10 +48,13 @@ class MyPlantsFragment : Fragment() {
             }
         })
 
-        binding.floatingActionButton.setOnClickListener {
-            viewModel.onAddNewPlantButtonClicked()
-            it.findNavController().navigate(R.id.action_plantListFragment_to_plantDetailFragment)
-        }
+        viewModel.navigateToPlantDetail.observe(viewLifecycleOwner, Observer{
+            plantId -> plantId?.let {
+                this.findNavController().navigate(MyPlantsFragmentDirections
+                        .actionPlantListFragmentToPlantDetailFragment(plantId))
+                viewModel.onPlantDetailNavigated()
+            }
+        })
 
         setHasOptionsMenu(true)
 
